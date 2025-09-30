@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrackSure - SentriSure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+ 
+    :root {
+      --primary-color: #00796b;
+      --secondary-color: #f2fdfb;
+      --accent-color: #00c8a0;
+      --light-bg: #f2fdfb;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    nav {
+      background: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    nav .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav .nav-links a {
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--secondary-color);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav .nav-links a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: var(--accent-color);
+      margin: 5px auto 0;
+      border-radius: 2px;
+      transition: width 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    nav .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      text-align: center;
+      color: #fff;
+      padding: 5rem 2rem 6rem;
+      position: relative;
+    }
+
+    header img {
+      width: 200px;
+      max-width: 90%;
+      margin-bottom: 1.5rem;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.7rem;
+      color: #e0f7fa;
+    }
+
+    header .cta-btn {
+      display: inline-block;
+      margin-top: 1.8rem;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    header .cta-btn:hover {
+      background: #00b38f;
+      transform: scale(1.05);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: url('https://svgshare.com/i/15dD.svg') no-repeat center bottom;
+      background-size: cover;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .feature img {
+      width: 70px;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature h3 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      background: var(--secondary-color);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.4rem; }
+      .section { padding: 3rem 1.5rem; }
+      nav .nav-links { gap: 15px; }
+      nav .nav-links a { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="logo">TrackSure</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <header>
+    <img src="tracksure logo.png" alt="TrackSure Logo" />
+    <h1>TrackSure</h1>
+    <p>Track it. Secure it. Be Sure with TrackSure.</p>
+    <a href="#features" class="cta-btn">Explore Features</a>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About TrackSure</h2>
+    <p>
+      <strong>TrackSure</strong>, developed by <strong>SentriSure</strong>, is a Smart GPS-Based 
+      Anti-Theft Tag designed to protect your valuables. From bags to bikes, gadgets to important 
+      documents, TrackSure offers real-time tracking and instant alerts to keep your belongings 
+      safe anytime, anywhere.
+    </p>
+  </section>
+
+  <section id="features" class="section">
+    <h2>Key Features</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="gps tracking" alt="GPS Tracking" />
+        <h3>Real-Time GPS Tracking</h3>
+        <p>Stay updated with live location tracking directly from your mobile app.</p>
+      </div>
+      <div class="feature">
+        <img src="instant alert.png" alt="Instant Alerts" />
+        <h3>Instant Alerts</h3>
+        <p>Get notified the moment any suspicious movement is detected.</p>
+      </div>
+      <div class="feature">
+        <img src="portable icon.jpg" alt="Compact Design" />
+        <h3>Portable & Compact</h3>
+        <p>A lightweight tag that’s easy to attach and carry everywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>For inquiries and collaborations, email us at: <strong>sentrisure@gmail.com</strong></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SentriSure. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
